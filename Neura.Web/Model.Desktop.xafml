@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Company="Neura" Copyright="Copyright (C) 2020 {0:Company} ALL RIGHTS RESERVED" Description="Version Vulendlela Village 20" Logo="Neura1">
+  <BOModel>
+    <Class Name="Neura.Module.BusinessObjects.ConcessionArea" DefaultDetailViewImage="SelectAll_32x32" DefaultListViewImage="SelectAll_32x32" />
+    <Class Name="Neura.Module.BusinessObjects.Customer" DefaultDetailViewImage="Customer_32x32" DefaultListViewImage="Customer_32x32" />
+    <Class Name="Neura.Module.BusinessObjects.Gateway" DefaultDetailViewImage="Radio_32x32" DefaultListViewImage="Radio_32x32" />
+    <Class Name="Neura.Module.BusinessObjects.LookupTOU" DefaultDetailViewImage="BO_Contract" DefaultListViewImage="BO_Contract" />
+    <Class Name="Neura.Module.BusinessObjects.Node" DefaultDetailViewImage="GaugeStyleFullCircular_32x32" DefaultListViewImage="GaugeStyleFullCircular_32x32" />
+    <Class Name="Neura.Module.BusinessObjects.ReadingType" DefaultDetailViewImage="Question_32x32" DefaultListViewImage="Question_32x32" />
+    <Class Name="Neura.Module.BusinessObjects.Retailer" DefaultDetailViewImage="BO_Department" DefaultListViewImage="BO_Department" />
+    <Class Name="Neura.Module.BusinessObjects.Tariff" DefaultDetailViewImage="BO_Report" DefaultListViewImage="BO_Report" />
+    <Class Name="Neura.Module.BusinessObjects.TariffComponent" DefaultDetailViewImage="BO_Category" DefaultListViewImage="BO_Category" />
+    <Class Name="Neura.Module.BusinessObjects.TariffRate" DefaultDetailViewImage="BO_Sale" DefaultListViewImage="BO_Sale" />
+    <Class Name="Neura.Module.BusinessObjects.TOUDetail" DefaultDetailViewImage="BO_List" DefaultListViewImage="BO_List" />
+    <Class Name="Neura.Module.BusinessObjects.TOULookup" DefaultDetailViewImage="MarqueeZoom" DefaultListViewImage="MarqueeZoom" />
+    <Class Name="Neura.Module.BusinessObjects.TOUSeason" DefaultDetailViewImage="Weather_Snow" DefaultListViewImage="Weather_Snow" />
+  </BOModel>
+  <NavigationItems ShowImages="True">
+    <Items>
+      <Item Id="Registration" Index="0">
+        <Items>
+          <Item Id="ConcessionArea_ListView" ImageName="SelectAll_32x32" Index="0" />
+          <Item Id="Location_ListView" Index="1" ImageName="DefaultMap_32x32" />
+          <Item Id="Gateway_ListView" Index="2" ImageName="Radio_32x32" />
+          <Item Id="Customer_ListView" Index="3" ImageName="Customer_32x32" />
+          <Item Id="User_ListView" ImageName="BOCustomer_32x32" Index="4" />
+          <Item Id="CustomerGateway_ListView" ImageName="DevAV\Navigate_32x32" Index="5" />
+          <Item Id="Node_ListView" ImageName="GaugeStyleFullCircular_32x32" Index="6" />
+          <Item Id="ReadingType_ListView" ImageName="Question_32x32" />
+        </Items>
+      </Item>
+      <Item Id="Tariffs" Index="1">
+        <Items>
+          <Item Id="Retailer_ListView" ImageName="BO_Department" />
+          <Item Id="Tariff_ListView" ImageName="BO_Report" />
+          <Item Id="TariffComponent_ListView" ImageName="BO_Category" />
+          <Item Id="TariffRate_ListView" ImageName="BO_Sale" />
+        </Items>
+      </Item>
+      <Item Id="Time-of-Use" Index="2">
+        <Items>
+          <Item Id="TOULookup_ListView" Index="0" Caption="TouLookup" ImageName="Lookup&amp;Reference_32x32" />
+          <Item Id="TOUSeason_ListView" Index="1" Caption="TouSeason" ImageName="Weather_Sunny" />
+          <Item Id="TOUDetail_ListView" Index="2" Caption="TouDetail" ImageName="PanelOff" />
+          <Item Id="PublicHolidays_ListView" ImageName="Weather_Umbrella" />
+        </Items>
+      </Item>
+      <Item Id="Default" Index="3" Caption="Authentication" />
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="19.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="19.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <ViewItems>
+    <PropertyEditor Name="PropertyEditors">
+      <RegisteredPropertyEditor PropertyType="System.DateTime" DefaultDisplayFormat="{0:yyyy/MM/dd HH:mm}" />
+      <RegisteredPropertyEditor PropertyType="System.Decimal" DefaultDisplayFormat="{0:N2}" DefaultEditMask="" />
+    </PropertyEditor>
+  </ViewItems>
+  <Views>
+    <ListView Id="Customer_CustomerValuesCollection_ListView">
+      <Variants>
+        <Variant Id="@19b52b2f-8573-4017-abc4-261af43900f6" ViewID="Customer_CustomerValuesCollection_ListView_Var" IsNewNode="True" />
+        <Variant Id="@5f2fb437-be08-4cef-8320-c5eaaabeebc1" ViewID="Customer_CustomerValuesCollection_ListView_Chart" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="Customer_CustomerValuesCollection_ListView_Chart" ClassName="Neura.Module.BusinessObjects.CustomerValues" Caption="Chart" EditorTypeName="DevExpress.ExpressApp.Chart.Web.ASPxChartListEditor" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Cost" PropertyName="Cost" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DateReceived" PropertyName="DateReceived" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Customer" PropertyName="Customer" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;19.2.7.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer BoundSeriesSorting=&quot;None&quot;&gt;&#xD;&#xA;      &lt;SeriesSerializable&gt;&#xD;&#xA;        &lt;Item1 Name=&quot;Cost&quot; ArgumentDataMember=&quot;DateReceived&quot; ValueDataMembersSerializable=&quot;Cost&quot; CrosshairContentShowMode=&quot;Default&quot; CrosshairEmptyValueLegendText=&quot;&quot; /&gt;&#xD;&#xA;      &lt;/SeriesSerializable&gt;&#xD;&#xA;      &lt;SeriesTemplate CrosshairContentShowMode=&quot;Default&quot; CrosshairEmptyValueLegendText=&quot;&quot; /&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;    &lt;Diagram RuntimePaneCollapse=&quot;true&quot; RuntimePaneResize=&quot;false&quot; PaneLayoutDirection=&quot;Vertical&quot; TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX StickToEnd=&quot;false&quot; VisibleInPanesSerializable=&quot;-1&quot; ShowBehind=&quot;false&quot;&gt;&#xD;&#xA;        &lt;Label TextPattern=&quot;{A:yyyy/MM/dd HH:mm}&quot; /&gt;&#xD;&#xA;        &lt;VisualRange Auto=&quot;false&quot; AutoSideMargins=&quot;false&quot; SideMarginsValue=&quot;0.5&quot; MinValueSerializable=&quot;05/19/2020 00:00:00.000&quot; MaxValueSerializable=&quot;05/19/2020 00:00:00.000&quot; /&gt;&#xD;&#xA;        &lt;WholeRange AutoSideMargins=&quot;false&quot; SideMarginsValue=&quot;0.5&quot; /&gt;&#xD;&#xA;        &lt;DateTimeScaleOptions MeasureUnit=&quot;Minute&quot; MeasureUnitMultiplier=&quot;10&quot; GridAlignment=&quot;Hour&quot; AutoGrid=&quot;false&quot;&gt;&#xD;&#xA;          &lt;IntervalOptions /&gt;&#xD;&#xA;        &lt;/DateTimeScaleOptions&gt;&#xD;&#xA;      &lt;/AxisX&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot; ShowBehind=&quot;false&quot; /&gt;&#xD;&#xA;      &lt;SelectionOptions /&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <ListView Id="Customer_CustomerValuesCollection_ListView_Var" ClassName="Neura.Module.BusinessObjects.CustomerValues" Caption="Grid" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Cost" PropertyName="Cost" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DateReceived" PropertyName="DateReceived" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Customer" PropertyName="Customer" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CustomerValues_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" CollectionsEditMode="View" />
+    <ListView Id="Node_PeriodValuesCollection_ListView">
+      <Variants>
+        <Variant Id="@01777009-1fb3-4234-a00c-5aa14b5ce306" ViewID="Node_PeriodValuesCollection_ListView_Var" IsNewNode="True" />
+        <Variant Id="@3299f909-7556-438d-bac4-715b7230faad" ViewID="Node_PeriodValuesCollection_ListView_Chart" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="Node_PeriodValuesCollection_ListView_Chart" ClassName="Neura.Module.BusinessObjects.PeriodValues" Caption="Chart" EditorTypeName="DevExpress.ExpressApp.Chart.Web.ASPxChartListEditor" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="uAcc" PropertyName="uAcc" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DateReceived" PropertyName="DateReceived" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Node" PropertyName="Node" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;19.2.7.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer BoundSeriesSorting=&quot;None&quot;&gt;&#xD;&#xA;      &lt;SeriesSerializable&gt;&#xD;&#xA;        &lt;Item1 Name=&quot;Usage&quot; ArgumentDataMember=&quot;DateReceived&quot; ValueDataMembersSerializable=&quot;uAcc&quot; CrosshairContentShowMode=&quot;Default&quot; CrosshairEmptyValueLegendText=&quot;&quot; /&gt;&#xD;&#xA;      &lt;/SeriesSerializable&gt;&#xD;&#xA;      &lt;SeriesTemplate CrosshairContentShowMode=&quot;Default&quot; CrosshairEmptyValueLegendText=&quot;&quot; /&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;    &lt;Diagram RuntimePaneCollapse=&quot;true&quot; RuntimePaneResize=&quot;false&quot; PaneLayoutDirection=&quot;Vertical&quot; TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX StickToEnd=&quot;false&quot; VisibleInPanesSerializable=&quot;-1&quot; ShowBehind=&quot;false&quot;&gt;&#xD;&#xA;        &lt;Label TextPattern=&quot;{A:yyyy/MM/dd HH:mm}&quot; /&gt;&#xD;&#xA;        &lt;DateTimeScaleOptions MeasureUnit=&quot;Minute&quot; MeasureUnitMultiplier=&quot;10&quot; GridAlignment=&quot;Hour&quot; AutoGrid=&quot;false&quot;&gt;&#xD;&#xA;          &lt;IntervalOptions /&gt;&#xD;&#xA;        &lt;/DateTimeScaleOptions&gt;&#xD;&#xA;      &lt;/AxisX&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot; ShowBehind=&quot;false&quot; /&gt;&#xD;&#xA;      &lt;SelectionOptions /&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <ListView Id="Node_PeriodValuesCollection_ListView_Var" ClassName="Neura.Module.BusinessObjects.PeriodValues" Caption="Grid" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="uAcc" PropertyName="uAcc" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DateReceived" PropertyName="DateReceived" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Node" PropertyName="Node" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PeriodValues_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" CollectionsEditMode="View" />
+    <DetailView Id="PublicHolidays_DetailView">
+      <Items>
+        <PropertyEditor Id="DateHoliday" DisplayFormat="{0:yyyy/MM/dd}" />
+      </Items>
+    </DetailView>
+    <ListView Id="PublicHolidays_ListView">
+      <Columns>
+        <ColumnInfo Id="DateHoliday" DisplayFormat="{0:yyyy/MM/dd}" />
+      </Columns>
+    </ListView>
+    <ListView Id="PublicHolidays_LookupListView">
+      <Columns>
+        <ColumnInfo Id="DateHoliday" DisplayFormat="{0:yyyy/MM/dd}" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TariffComponent_DetailView">
+      <Items>
+        <PropertyEditor Id="Floor" Index="0" />
+      </Items>
+    </DetailView>
+    <DetailView Id="TariffRate_DetailView">
+      <Items>
+        <PropertyEditor Id="End" PropertyEditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxDateTimePropertyEditor" EditMaskType="DateTime" EditMask="g" />
+        <PropertyEditor Id="Start" PropertyEditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxDateTimePropertyEditor" EditMaskType="DateTime" EditMask="g" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

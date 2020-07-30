@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" EnableUpperCase="Neura.Web">
+	<Applications>
+		<!-- Web -->
+		<Application
+			Name="NeuraWeb"
+			UseIISExpress="True"
+			Url="http://localhost:4030"
+			PhysicalPath="[WebAppBin]"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"
+			IgnoreCase="true"/>
+		<!-- For IIS -->
+		<!--Application
+			Name="NeuraWeb"
+			Url="http://localhost/Neura.Web/Default.aspx"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"
+			IgnoreCase="true"/-->
+	</Applications>
+	<TestDatabases>
+		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="NeuraEasyTest"/>
+	</TestDatabases>
+
+	<Aliases>
+		<Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
+		<Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\Neura.Web" />
+	</Aliases>
+</Options>

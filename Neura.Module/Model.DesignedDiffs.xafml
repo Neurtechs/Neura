@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Neura">
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="19.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Node_ReadingTypes_ListView">
+      <Columns>
+        <ColumnInfo Id="Node" LookupProperty="SerialNo" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
